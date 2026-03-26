@@ -87,9 +87,6 @@
   <input type="checkbox" name="use" value="Yes"> Yes<br>
   <input type="checkbox" name="use" value="No"> No<br><br>
 
-  <p>Which brand of face wash do you use?</p>
-  <input type="text" name="brand"><br><br>
-
   <p>Frequency:</p>
   <input type="checkbox" name="frequency" value="Once"> Once a day<br>
   <input type="checkbox" name="frequency" value="Twice"> Twice a day<br>
@@ -118,7 +115,7 @@
 
 <script>
 
-// single-select checkbox logic
+// Restrict checkbox to single selection per question
 document.querySelectorAll("input[type=checkbox]").forEach(cb => {
   cb.addEventListener("change", function() {
     let group = document.getElementsByName(this.name);
@@ -128,7 +125,7 @@ document.querySelectorAll("input[type=checkbox]").forEach(cb => {
   });
 });
 
-// validation
+// Section validation
 function nextSection(current) {
   if (current === 1) {
     let groups = ["age","gender","education","occupation","income"];
@@ -151,14 +148,12 @@ function nextSection(current) {
   document.getElementById("section" + current).classList.remove("active");
   document.getElementById("section" + (current + 1)).classList.add("active");
 }
-<script>
+
 document.getElementById("surveyForm").addEventListener("submit", function(e) {
   e.preventDefault();
-
-  setTimeout(() => {
-    window.location.href = "./thankyou.html";
-  }, 200);
+  alert("Form submitted successfully!");
 });
+
 </script>
 
 </body>
