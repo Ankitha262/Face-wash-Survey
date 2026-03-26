@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Face Wash Survey</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    .section { display: none; }
+    .active { display: block; }
+    button { margin-top: 20px; }
+  </style>
+</head>
+
+<body>
+
+<h2>Consumer Preferences and Satisfaction Towards Face Wash Products</h2>
+
+<form id="surveyForm">
+
+<!-- SECTION 1 -->
+<div id="section1" class="section active">
+  <h3>Socio-Demographic Information (Required)</h3>
+
+  <label>Age:</label>
+  <select name="age" required>
+    <option value="">Select</option>
+    <option>Below 18</option>
+    <option>18–25</option>
+    <option>26–35</option>
+    <option>36–45</option>
+    <option>Above 45</option>
+  </select><br><br>
+
+  <label>Gender:</label>
+  <select name="gender" required>
+    <option value="">Select</option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Prefer not to say</option>
+  </select><br><br>
+
+  <label>Education:</label>
+  <select name="education" required>
+    <option value="">Select</option>
+    <option>School</option>
+    <option>Undergraduate</option>
+    <option>Postgraduate</option>
+  </select><br><br>
+
+  <label>Occupation:</label>
+  <select name="occupation" required>
+    <option value="">Select</option>
+    <option>Student</option>
+    <option>Employed</option>
+    <option>Self-employed</option>
+    <option>Unemployed</option>
+  </select><br><br>
+
+  <label>Monthly Income:</label>
+  <select name="income" required>
+    <option value="">Select</option>
+    <option>Below 10,000</option>
+    <option>10,000–25,000</option>
+    <option>25,000–50,000</option>
+    <option>Above 50,000</option>
+  </select><br><br>
+
+  <button type="button" onclick="nextSection()">Next</button>
+</div>
+
+<!-- SECTION 2 -->
+<div id="section2" class="section">
+  <h3>Face Wash Usage & Preferences (Optional)</h3>
+
+  <label>Do you use face wash?</label><br>
+  <input type="radio" name="use" value="Yes"> Yes
+  <input type="radio" name="use" value="No"> No<br><br>
+
+  <label>Frequency:</label>
+  <select name="frequency">
+    <option value="">Select</option>
+    <option>Once a day</option>
+    <option>Twice a day</option>
+    <option>Occasionally</option>
+  </select><br><br>
+
+  <label>Skin Type:</label>
+  <select name="skin">
+    <option value="">Select</option>
+    <option>Oily</option>
+    <option>Dry</option>
+    <option>Combination</option>
+    <option>Sensitive</option>
+  </select><br><br>
+
+  <label>Preferred Type:</label>
+  <select name="type">
+    <option value="">Select</option>
+    <option>Gel</option>
+    <option>Cream</option>
+    <option>Foam</option>
+    <option>Herbal</option>
+  </select><br><br>
+
+  <label>Brand:</label>
+  <input type="text" name="brand"><br><br>
+
+  <label>Factors:</label><br>
+  <input type="checkbox" name="factor" value="Price"> Price
+  <input type="checkbox" name="factor" value="Brand"> Brand
+  <input type="checkbox" name="factor" value="Ingredients"> Ingredients<br><br>
+
+  <label>Satisfaction (1–5):</label>
+  <input type="number" name="satisfaction" min="1" max="5"><br><br>
+
+  <label>Issues faced:</label><br>
+  <input type="checkbox" name="issues" value="Irritation"> Irritation
+  <input type="checkbox" name="issues" value="Dryness"> Dryness<br><br>
+
+  <label>Suggestions:</label><br>
+  <textarea name="suggestions"></textarea><br><br>
+
+  <button type="submit">Submit</button>
+</div>
+
+</form>
+
+<script>
+function nextSection() {
+  let section1 = document.getElementById("section1");
+  let inputs = section1.querySelectorAll("select");
+
+  for (let i = 0; i < inputs.length; i++) {
+    if (!inputs[i].value) {
+      alert("Please fill all required fields.");
+      return;
+    }
+  }
+
+  section1.classList.remove("active");
+  document.getElementById("section2").classList.add("active");
+}
+
+document.getElementById("surveyForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  alert("Form submitted successfully!");
+});
+</script>
+
+</body>
+</html>
