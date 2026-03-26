@@ -3,9 +3,10 @@
 <head>
   <title>Face Wash Survey</title>
   <style>
-    body { font-family: Arial; margin: 40px; }
+    body { font-family: Arial; margin: 30px; }
     .section { display: none; }
     .active { display: block; }
+    .required { color: red; }
     button { margin-top: 20px; }
   </style>
 </head>
@@ -18,108 +19,93 @@
 
 <!-- SECTION 1 -->
 <div id="section1" class="section active">
-  <h3>Socio-Demographic Information (Required)</h3>
+  <h3>Socio-Demographic Information</h3>
 
-  <p>Age:</p>
-  <input type="radio" name="age" value="Below 18" required> Below 18<br>
-  <input type="radio" name="age" value="18–25"> 18–25<br>
-  <input type="radio" name="age" value="26–35"> 26–35<br>
-  <input type="radio" name="age" value="36–45"> 36–45<br>
-  <input type="radio" name="age" value="Above 45"> Above 45<br><br>
+  <p>Age <span class="required">*</span></p>
+  <input type="checkbox" name="age" value="Below 18" required> Below 18<br>
+  <input type="checkbox" name="age" value="18–25"> 18–25<br>
+  <input type="checkbox" name="age" value="26–35"> 26–35<br>
+  <input type="checkbox" name="age" value="36–45"> 36–45<br>
+  <input type="checkbox" name="age" value="Above 45"> Above 45<br><br>
 
-  <p>Gender:</p>
-  <input type="radio" name="gender" value="Male" required> Male<br>
-  <input type="radio" name="gender" value="Female"> Female<br>
-  <input type="radio" name="gender" value="Prefer not to say"> Prefer not to say<br><br>
+  <p>Gender <span class="required">*</span></p>
+  <input type="checkbox" name="gender" value="Male" required> Male<br>
+  <input type="checkbox" name="gender" value="Female"> Female<br>
+  <input type="checkbox" name="gender" value="Prefer not to say"> Prefer not to say<br><br>
 
-  <p>Education:</p>
-  <input type="radio" name="education" value="School" required> School<br>
-  <input type="radio" name="education" value="Undergraduate"> Undergraduate<br>
-  <input type="radio" name="education" value="Postgraduate"> Postgraduate<br><br>
+  <p>Education <span class="required">*</span></p>
+  <input type="checkbox" name="education" value="School" required> School<br>
+  <input type="checkbox" name="education" value="Undergraduate"> Undergraduate<br>
+  <input type="checkbox" name="education" value="Postgraduate"> Postgraduate<br><br>
 
-  <p>Occupation:</p>
-  <input type="radio" name="occupation" value="Student" required> Student<br>
-  <input type="radio" name="occupation" value="Employed"> Employed<br>
-  <input type="radio" name="occupation" value="Self-employed"> Self-employed<br>
-  <input type="radio" name="occupation" value="Unemployed"> Unemployed<br><br>
+  <p>Occupation <span class="required">*</span></p>
+  <input type="checkbox" name="occupation" value="Student" required> Student<br>
+  <input type="checkbox" name="occupation" value="Employed"> Employed<br>
+  <input type="checkbox" name="occupation" value="Self-employed"> Self-employed<br>
+  <input type="checkbox" name="occupation" value="Unemployed"> Unemployed<br><br>
 
-  <p>Monthly Income:</p>
-  <input type="radio" name="income" value="Below 10,000" required> Below 10,000<br>
-  <input type="radio" name="income" value="10,000–25,000"> 10,000–25,000<br>
-  <input type="radio" name="income" value="25,000–50,000"> 25,000–50,000<br>
-  <input type="radio" name="income" value="Above 50,000"> Above 50,000<br><br>
+  <p>Monthly Income <span class="required">*</span></p>
+  <input type="checkbox" name="income" value="Below 10,000" required> Below 10,000<br>
+  <input type="checkbox" name="income" value="10,000–25,000"> 10,000–25,000<br>
+  <input type="checkbox" name="income" value="25,000–50,000"> 25,000–50,000<br>
+  <input type="checkbox" name="income" value="Above 50,000"> Above 50,000<br><br>
 
   <button type="button" onclick="nextSection(1)">Next</button>
 </div>
 
 <!-- SECTION 2 -->
 <div id="section2" class="section">
-  <h3>Environmental Exposure & Skin Response (Optional)</h3>
+  <h3>Environmental Exposure & Skin Response</h3>
 
   <p>Pollution level in your area:</p>
-  <input type="radio" name="pollution" value="Low"> Low<br>
-  <input type="radio" name="pollution" value="Moderate"> Moderate<br>
-  <input type="radio" name="pollution" value="High"> High<br><br>
+  <input type="checkbox" name="pollution" value="Low"> Low<br>
+  <input type="checkbox" name="pollution" value="Moderate"> Moderate<br>
+  <input type="checkbox" name="pollution" value="High"> High<br><br>
 
-  <p>How does your skin feel in summer?</p>
-  <input type="checkbox" name="summer_skin" value="Oily"> Oily<br>
-  <input type="checkbox" name="summer_skin" value="Sweaty"> Sweaty<br>
-  <input type="checkbox" name="summer_skin" value="Irritated"> Irritated<br><br>
+  <p>Skin in summer:</p>
+  <input type="checkbox" name="summer" value="Oily"> Oily<br>
+  <input type="checkbox" name="summer" value="Sweaty"> Sweaty<br>
+  <input type="checkbox" name="summer" value="Irritated"> Irritated<br><br>
 
-  <p>How does your skin feel in winter?</p>
-  <input type="checkbox" name="winter_skin" value="Dry"> Dry<br>
-  <input type="checkbox" name="winter_skin" value="Rough"> Rough<br>
-  <input type="checkbox" name="winter_skin" value="Normal"> Normal<br><br>
+  <p>Skin in winter:</p>
+  <input type="checkbox" name="winter" value="Dry"> Dry<br>
+  <input type="checkbox" name="winter" value="Rough"> Rough<br>
+  <input type="checkbox" name="winter" value="Normal"> Normal<br><br>
 
-  <p>Do you experience redness due to sun exposure?</p>
-  <input type="radio" name="sun_effect" value="Yes"> Yes<br>
-  <input type="radio" name="sun_effect" value="No"> No<br><br>
+  <p>Redness due to sun:</p>
+  <input type="checkbox" name="sun" value="Yes"> Yes<br>
+  <input type="checkbox" name="sun" value="No"> No<br><br>
 
   <button type="button" onclick="nextSection(2)">Next</button>
 </div>
 
 <!-- SECTION 3 -->
 <div id="section3" class="section">
-  <h3>Face Wash Usage & Preferences (Optional)</h3>
+  <h3>Face Wash Usage & Preferences</h3>
 
   <p>Do you use face wash?</p>
-  <input type="radio" name="use" value="Yes"> Yes<br>
-  <input type="radio" name="use" value="No"> No<br><br>
+  <input type="checkbox" name="use" value="Yes"> Yes<br>
+  <input type="checkbox" name="use" value="No"> No<br><br>
 
-  <p>How often do you use face wash?</p>
-  <input type="radio" name="frequency" value="Once a day"> Once a day<br>
-  <input type="radio" name="frequency" value="Twice a day"> Twice a day<br>
-  <input type="radio" name="frequency" value="Occasionally"> Occasionally<br><br>
+  <p>Frequency:</p>
+  <input type="checkbox" name="frequency" value="Once"> Once a day<br>
+  <input type="checkbox" name="frequency" value="Twice"> Twice a day<br>
+  <input type="checkbox" name="frequency" value="Occasional"> Occasionally<br><br>
 
   <p>Skin Type:</p>
-  <input type="radio" name="skin" value="Oily"> Oily<br>
-  <input type="radio" name="skin" value="Dry"> Dry<br>
-  <input type="radio" name="skin" value="Combination"> Combination<br>
-  <input type="radio" name="skin" value="Sensitive"> Sensitive<br><br>
+  <input type="checkbox" name="skin" value="Oily"> Oily<br>
+  <input type="checkbox" name="skin" value="Dry"> Dry<br>
+  <input type="checkbox" name="skin" value="Combination"> Combination<br>
+  <input type="checkbox" name="skin" value="Sensitive"> Sensitive<br><br>
 
-  <p>Preferred Face Wash Type:</p>
-  <input type="radio" name="type" value="Gel"> Gel<br>
-  <input type="radio" name="type" value="Cream"> Cream<br>
-  <input type="radio" name="type" value="Foam"> Foam<br>
-  <input type="radio" name="type" value="Herbal"> Herbal<br><br>
+  <p>Satisfaction (1–5):</p>
+  <input type="checkbox" name="satisfaction" value="1"> 1
+  <input type="checkbox" name="satisfaction" value="2"> 2
+  <input type="checkbox" name="satisfaction" value="3"> 3
+  <input type="checkbox" name="satisfaction" value="4"> 4
+  <input type="checkbox" name="satisfaction" value="5"> 5<br><br>
 
-  <p>Brand you use:</p>
-  <input type="text" name="brand"><br><br>
-
-  <p>Factors influencing choice:</p>
-  <input type="checkbox" name="factor" value="Price"> Price<br>
-  <input type="checkbox" name="factor" value="Brand"> Brand<br>
-  <input type="checkbox" name="factor" value="Ingredients"> Ingredients<br>
-  <input type="checkbox" name="factor" value="Fragrance"> Fragrance<br><br>
-
-  <p>Rate satisfaction (1–5):</p>
-  <input type="radio" name="satisfaction" value="1"> 1
-  <input type="radio" name="satisfaction" value="2"> 2
-  <input type="radio" name="satisfaction" value="3"> 3
-  <input type="radio" name="satisfaction" value="4"> 4
-  <input type="radio" name="satisfaction" value="5"> 5<br><br>
-
-  <p>Any suggestions:</p>
+  <p>Suggestions:</p>
   <textarea name="suggestions"></textarea><br><br>
 
   <button type="submit">Submit</button>
@@ -128,13 +114,24 @@
 </form>
 
 <script>
-function nextSection(current) {
 
+// Restrict checkbox to single selection per question
+document.querySelectorAll("input[type=checkbox]").forEach(cb => {
+  cb.addEventListener("change", function() {
+    let group = document.getElementsByName(this.name);
+    group.forEach(el => {
+      if (el !== this) el.checked = false;
+    });
+  });
+});
+
+// Section validation
+function nextSection(current) {
   if (current === 1) {
-    let requiredGroups = ["age","gender","education","occupation","income"];
-    
-    for (let group of requiredGroups) {
-      let options = document.getElementsByName(group);
+    let groups = ["age","gender","education","occupation","income"];
+
+    for (let g of groups) {
+      let options = document.getElementsByName(g);
       let checked = false;
 
       for (let opt of options) {
@@ -142,7 +139,7 @@ function nextSection(current) {
       }
 
       if (!checked) {
-        alert("Please complete all required demographic questions.");
+        alert("Please answer all starred (*) questions.");
         return;
       }
     }
@@ -156,6 +153,7 @@ document.getElementById("surveyForm").addEventListener("submit", function(e) {
   e.preventDefault();
   alert("Form submitted successfully!");
 });
+
 </script>
 
 </body>
