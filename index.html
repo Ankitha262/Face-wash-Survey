@@ -109,9 +109,13 @@
   <textarea name="suggestions"></textarea><br><br>
 
   <button type="submit">Submit</button>
+</div>
 
+<!-- SECTION 4 (THANK YOU PAGE) -->
+<div id="section4" class="section">
   <h2>Thank You!</h2>
   <p>Your response has been successfully submitted.</p>
+  <p>We appreciate your time and participation in this survey.</p>
 </div>
 
 </form>
@@ -152,9 +156,12 @@ function nextSection(current) {
   document.getElementById("section" + (current + 1)).classList.add("active");
 }
 
+// Submit → show Thank You page
 document.getElementById("surveyForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  alert("Form submitted successfully!");
+
+  document.getElementById("section3").classList.remove("active");
+  document.getElementById("section4").classList.add("active");
 });
 
 </script>
