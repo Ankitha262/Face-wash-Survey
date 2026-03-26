@@ -111,18 +111,11 @@
   <button type="submit">Submit</button>
 </div>
 
-<!-- SECTION 4 (THANK YOU PAGE) -->
-<div id="section4" class="section">
-  <h2>Thank You!</h2>
-  <p>Your response has been successfully submitted.</p>
-  <p>We appreciate your time and participation in this survey.</p>
-</div>
-
 </form>
 
 <script>
 
-// Restrict checkbox to single selection per question
+// single-select checkbox logic
 document.querySelectorAll("input[type=checkbox]").forEach(cb => {
   cb.addEventListener("change", function() {
     let group = document.getElementsByName(this.name);
@@ -132,7 +125,7 @@ document.querySelectorAll("input[type=checkbox]").forEach(cb => {
   });
 });
 
-// Section validation
+// validation
 function nextSection(current) {
   if (current === 1) {
     let groups = ["age","gender","education","occupation","income"];
@@ -156,12 +149,10 @@ function nextSection(current) {
   document.getElementById("section" + (current + 1)).classList.add("active");
 }
 
-// Submit → show Thank You page
+//  IMPORTANT CHANGE HERE
 document.getElementById("surveyForm").addEventListener("submit", function(e) {
   e.preventDefault();
-
-  document.getElementById("section3").classList.remove("active");
-  document.getElementById("section4").classList.add("active");
+  window.location.href = "thankyou.html";
 });
 
 </script>
