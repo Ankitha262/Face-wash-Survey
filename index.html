@@ -5,7 +5,7 @@
   <style>
     body { font-family: Arial; margin: 30px; }
     .section { display: none; }
-    .active { display: block; }
+    #section1 { display: block; } /* FIX */
     .required { color: red; }
     button { margin-top: 20px; }
   </style>
@@ -18,34 +18,34 @@
 <form id="surveyForm">
 
 <!-- SECTION 1 -->
-<div id="section1" class="section active">
+<div id="section1" class="section">
   <h3>Socio-Demographic Information</h3>
 
   <p>Age <span class="required">*</span></p>
-  <input type="checkbox" name="age" value="Below 18" required> Below 18<br>
+  <input type="checkbox" name="age" value="Below 18"> Below 18<br>
   <input type="checkbox" name="age" value="18–25"> 18–25<br>
   <input type="checkbox" name="age" value="26–35"> 26–35<br>
   <input type="checkbox" name="age" value="36–45"> 36–45<br>
   <input type="checkbox" name="age" value="Above 45"> Above 45<br><br>
 
   <p>Gender <span class="required">*</span></p>
-  <input type="checkbox" name="gender" value="Male" required> Male<br>
+  <input type="checkbox" name="gender" value="Male"> Male<br>
   <input type="checkbox" name="gender" value="Female"> Female<br>
   <input type="checkbox" name="gender" value="Prefer not to say"> Prefer not to say<br><br>
 
   <p>Education <span class="required">*</span></p>
-  <input type="checkbox" name="education" value="School" required> School<br>
+  <input type="checkbox" name="education" value="School"> School<br>
   <input type="checkbox" name="education" value="Undergraduate"> Undergraduate<br>
   <input type="checkbox" name="education" value="Postgraduate"> Postgraduate<br><br>
 
   <p>Occupation <span class="required">*</span></p>
-  <input type="checkbox" name="occupation" value="Student" required> Student<br>
+  <input type="checkbox" name="occupation" value="Student"> Student<br>
   <input type="checkbox" name="occupation" value="Employed"> Employed<br>
   <input type="checkbox" name="occupation" value="Self-employed"> Self-employed<br>
   <input type="checkbox" name="occupation" value="Unemployed"> Unemployed<br><br>
 
   <p>Monthly Income <span class="required">*</span></p>
-  <input type="checkbox" name="income" value="Below 10,000" required> Below 10,000<br>
+  <input type="checkbox" name="income" value="Below 10,000"> Below 10,000<br>
   <input type="checkbox" name="income" value="10,000–25,000"> 10,000–25,000<br>
   <input type="checkbox" name="income" value="25,000–50,000"> 25,000–50,000<br>
   <input type="checkbox" name="income" value="Above 50,000"> Above 50,000<br><br>
@@ -58,23 +58,23 @@
   <h3>Environmental Exposure & Skin Response</h3>
 
   <p>Pollution level in your area:</p>
-  <input type="checkbox" name="pollution" value="Low"> Low<br>
-  <input type="checkbox" name="pollution" value="Moderate"> Moderate<br>
-  <input type="checkbox" name="pollution" value="High"> High<br><br>
+  <input type="checkbox" name="pollution"> Low<br>
+  <input type="checkbox" name="pollution"> Moderate<br>
+  <input type="checkbox" name="pollution"> High<br><br>
 
   <p>Skin in summer:</p>
-  <input type="checkbox" name="summer" value="Oily"> Oily<br>
-  <input type="checkbox" name="summer" value="Sweaty"> Sweaty<br>
-  <input type="checkbox" name="summer" value="Irritated"> Irritated<br><br>
+  <input type="checkbox" name="summer"> Oily<br>
+  <input type="checkbox" name="summer"> Sweaty<br>
+  <input type="checkbox" name="summer"> Irritated<br><br>
 
   <p>Skin in winter:</p>
-  <input type="checkbox" name="winter" value="Dry"> Dry<br>
-  <input type="checkbox" name="winter" value="Rough"> Rough<br>
-  <input type="checkbox" name="winter" value="Normal"> Normal<br><br>
+  <input type="checkbox" name="winter"> Dry<br>
+  <input type="checkbox" name="winter"> Rough<br>
+  <input type="checkbox" name="winter"> Normal<br><br>
 
   <p>Redness due to sun:</p>
-  <input type="checkbox" name="sun" value="Yes"> Yes<br>
-  <input type="checkbox" name="sun" value="No"> No<br><br>
+  <input type="checkbox" name="sun"> Yes<br>
+  <input type="checkbox" name="sun"> No<br><br>
 
   <button type="button" onclick="nextSection(2)">Next</button>
 </div>
@@ -84,26 +84,26 @@
   <h3>Face Wash Usage & Preferences</h3>
 
   <p>Do you use face wash?</p>
-  <input type="checkbox" name="use" value="Yes"> Yes<br>
-  <input type="checkbox" name="use" value="No"> No<br><br>
+  <input type="checkbox" name="use"> Yes<br>
+  <input type="checkbox" name="use"> No<br><br>
 
   <p>Frequency:</p>
-  <input type="checkbox" name="frequency" value="Once"> Once a day<br>
-  <input type="checkbox" name="frequency" value="Twice"> Twice a day<br>
-  <input type="checkbox" name="frequency" value="Occasional"> Occasionally<br><br>
+  <input type="checkbox" name="frequency"> Once a day<br>
+  <input type="checkbox" name="frequency"> Twice a day<br>
+  <input type="checkbox" name="frequency"> Occasionally<br><br>
 
   <p>Skin Type:</p>
-  <input type="checkbox" name="skin" value="Oily"> Oily<br>
-  <input type="checkbox" name="skin" value="Dry"> Dry<br>
-  <input type="checkbox" name="skin" value="Combination"> Combination<br>
-  <input type="checkbox" name="skin" value="Sensitive"> Sensitive<br><br>
+  <input type="checkbox" name="skin"> Oily<br>
+  <input type="checkbox" name="skin"> Dry<br>
+  <input type="checkbox" name="skin"> Combination<br>
+  <input type="checkbox" name="skin"> Sensitive<br><br>
 
   <p>Satisfaction (1–5):</p>
-  <input type="checkbox" name="satisfaction" value="1"> 1
-  <input type="checkbox" name="satisfaction" value="2"> 2
-  <input type="checkbox" name="satisfaction" value="3"> 3
-  <input type="checkbox" name="satisfaction" value="4"> 4
-  <input type="checkbox" name="satisfaction" value="5"> 5<br><br>
+  <input type="checkbox" name="satisfaction"> 1
+  <input type="checkbox" name="satisfaction"> 2
+  <input type="checkbox" name="satisfaction"> 3
+  <input type="checkbox" name="satisfaction"> 4
+  <input type="checkbox" name="satisfaction"> 5<br><br>
 
   <p>Suggestions:</p>
   <textarea name="suggestions"></textarea><br><br>
@@ -115,7 +115,7 @@
 
 <script>
 
-// Restrict checkbox to single selection per question
+// single select checkbox logic
 document.querySelectorAll("input[type=checkbox]").forEach(cb => {
   cb.addEventListener("change", function() {
     let group = document.getElementsByName(this.name);
@@ -125,8 +125,9 @@ document.querySelectorAll("input[type=checkbox]").forEach(cb => {
   });
 });
 
-// Section validation
+// FIXED navigation
 function nextSection(current) {
+
   if (current === 1) {
     let groups = ["age","gender","education","occupation","income"];
 
@@ -134,8 +135,11 @@ function nextSection(current) {
       let options = document.getElementsByName(g);
       let checked = false;
 
-      for (let opt of options) {
-        if (opt.checked) checked = true;
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+          checked = true;
+          break;
+        }
       }
 
       if (!checked) {
@@ -145,10 +149,11 @@ function nextSection(current) {
     }
   }
 
-  document.getElementById("section" + current).classList.remove("active");
-  document.getElementById("section" + (current + 1)).classList.add("active");
+  document.getElementById("section" + current).style.display = "none";
+  document.getElementById("section" + (current + 1)).style.display = "block";
 }
 
+// submit works
 document.getElementById("surveyForm").addEventListener("submit", function(e) {
   e.preventDefault();
   alert("Form submitted successfully!");
